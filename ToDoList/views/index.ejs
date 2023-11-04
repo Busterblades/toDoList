@@ -5,11 +5,22 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="/styles/main.css">
     <title>To do list</title>
 </head>
 <body>
+<div class="container">
     <h1>Tareas</h1>
-    <a href="/work">Tareas de trabajo</a>
-    <a href="/home">Tareas del hogar</a>
+    <div class="tasks-options">
+        <p>¿Qué tipo de tareas deseas realizar?</p>
+        <div>
+            <a href="/work"><div class="button">Trabajo</div></a>
+            <a href="/home"><div class="button">Hogar</div></a>
+        </div>
+    </div>
+</div>
+<%- include ("partials/footer.ejs") %>
 </body>
+
+
 </html>

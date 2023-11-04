@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tareas del hogar</title>
+    <link rel="stylesheet" type="text/css" href="/styles/work.css">
+</head>
+<body>
+<%- include ("partials/header.ejs")%>
+<main>
+    <div class="notebook">
+        <div class="notebook-header">
+            <div class="date">
+                <%= daysOfMonths[today] %>, <%= monthsOfYear[month] %> <%= daysOfMonth %>, <%= year %>
+            </div>
+        </div>
+        <form action="/home/add" method="POST">
+            <div class="task-form">
+                <input type="text" name="task" placeholder="Nueva tarea del hogar">
+                <button type="submit">+</button>
+            </div>
+        </form>
+        <div class="task-list">
+            <ul>
+                <% for (let i = 0; i < homeList.length; i++) { %>
+                    <li>
+                        <input type="checkbox" id="task<%= i %>" name="task<%= i %>" class="task-checkbox" />
+                        <label for="task<%= i %>"><%= homeList[i] %></label>
+                        <span><a href="/home/delete/<%= i %>">x</a></span>
+                    </li>
+                <% } %>
+            </ul>
+
+        </div>
+    </div>
+</main>
+<%- include ("partials/footer.ejs") %>
+</body>
+</html>
